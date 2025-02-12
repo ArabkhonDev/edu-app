@@ -1,0 +1,100 @@
+role:
+    id
+    name
+    1-Direktor
+    2-Teacher
+    3-Student
+    
+
+Room: 
+    id
+    group_id
+    teacher_id
+    name
+
+
+course:
+    id
+    language_id
+    name
+    duration
+    price
+    knowladge
+
+
+stage:
+    id
+    name
+    group_id
+
+
+language:
+    id 
+    name
+
+
+Group:
+    id
+    name
+    teacher_id
+    stage_id
+    course_id
+    lesson start_time
+    lesson end_time
+
+
+group_student:
+    student_id
+    group_id
+
+
+student: 
+    id
+    email
+    password
+    username
+    lastname
+    phones
+    address
+
+
+Teacher:
+    id
+    email
+    password
+    username
+    lastname
+    phones
+    address
+    professional
+
+
+media:
+    id
+    media_type
+    media_file
+
+
+one to one:
+    user to role
+
+
+one to many:
+    group to course
+    group to teacher
+    group to Room
+    group to stage
+
+
+many to many:
+    teacher to group
+    student to group
+    language to course
+
+
+polimorph:
+    student to media
+    teacher to media
+    direktor to media
+    group to media
+    room to media
