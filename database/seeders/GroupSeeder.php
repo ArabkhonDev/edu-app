@@ -2,16 +2,27 @@
 
 namespace Database\Seeders;
 
+use App\Models\Group;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class GroupSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+   
     public function run(): void
     {
-        //
+        for($i = 0; $i<20; $i++){
+            Group::create([
+                'teacher_id'=>rand(1, 13),
+                'stage_id'=>rand(1, 5),
+                'course_id'=>rand(1, 5),
+                "room_id" =>rand(1, 10),
+                'start_time'=>Carbon::parse('12:30:00'),
+                // 'start_time'=>Carbon::now()->format('H:i:s'),
+                'end_time'=> Carbon::parse('17:30:00'),
+                'name'=>fake()->name,
+            ]);
+        }
     }
 }

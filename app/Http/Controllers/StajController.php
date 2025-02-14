@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class StageController extends Controller
+class StajController extends Controller
 {
     //
 }

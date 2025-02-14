@@ -11,6 +11,8 @@ Room:
     group_id
     teacher_id
     name
+    lesson start_time
+    lesson end_time
 
 
 course:
@@ -39,8 +41,7 @@ Group:
     teacher_id
     stage_id
     course_id
-    lesson start_time
-    lesson end_time
+
 
 
 group_student:
@@ -84,6 +85,7 @@ one to many:
     group to teacher
     group to Room
     group to stage
+    teacher to course
 
 
 many to many:

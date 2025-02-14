@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('stajs', function (Blueprint $table) {
             $table->id();
+            $table->text("firma_name");
+            $table->text("title");
+            $table->text("duration");
+            $table->text("stack");
+            $table->text("desc");
             $table->timestamps();
         });
     }
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('stajs');
     }
 };
