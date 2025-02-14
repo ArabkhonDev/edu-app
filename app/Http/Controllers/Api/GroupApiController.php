@@ -32,7 +32,7 @@ class GroupApiController extends Controller
 
     public function destroy(Request $request)
     {
-        $request->delete();
+        $request->delete;
         return "deleted group";
     }
 }

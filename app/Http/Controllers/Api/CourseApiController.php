@@ -32,7 +32,7 @@ class CourseApiController extends Controller
 
     public function destroy(Request $request)
     {
-        $request->delete();
+        $request->delete;
         return "deleted course";
     }
 }

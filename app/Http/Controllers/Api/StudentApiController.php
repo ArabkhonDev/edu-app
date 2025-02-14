@@ -31,7 +31,7 @@ class StudentApiController extends Controller
 
     public function destroy(Request $request)
     {
-        $request->delete();
+        $request->delete;
         return "deleted student";
     }
 }
