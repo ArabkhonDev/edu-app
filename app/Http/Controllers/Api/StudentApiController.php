@@ -19,9 +19,9 @@ class StudentApiController extends Controller
         //
     }
 
-    public function show(Request $request)
+    public function show(Student $student)
     {
-        return $request;
+        return $student;
     }
 
     public function update(Request $request, string $id)
@@ -29,9 +29,9 @@ class StudentApiController extends Controller
         //
     }
 
-    public function destroy(Request $request)
+    public function destroy(Student $student)
     {
-        $request->delete;
+        $student->delete();
         return "deleted student";
     }
 }

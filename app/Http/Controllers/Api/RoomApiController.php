@@ -19,9 +19,9 @@ class RoomApiController extends Controller
         //
     }
 
-    public function show(Request $request)
+    public function show(Room $room)
     {
-        return $request;
+        return $room;
     }
 
     public function update(Request $request, string $id)
@@ -29,9 +29,9 @@ class RoomApiController extends Controller
         //
     }
 
-    public function destroy(Request $request)
+    public function destroy(Room $room)
     {
-        $request->delete;
+        $room->delete();
         return "deleted room";
     }
 }

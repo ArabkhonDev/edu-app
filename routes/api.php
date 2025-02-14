@@ -24,5 +24,4 @@ Route::apiResources([
     'stages'=>StageApiController::class,
     'rooms'=>RoomApiController::class,
     'languages'=>LanguageApiController::class,
-    'stajes'=>StajApiController::class
 ]);

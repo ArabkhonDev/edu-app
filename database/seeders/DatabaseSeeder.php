@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             RoomSeeder::class,
             GroupSeeder::class,
-            StajSeeder::class
         ]);
       
     }

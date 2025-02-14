@@ -13,6 +13,7 @@ class Teacher extends Model
         'username',
         'lastname',
         'phone',
+        'old_jobs',
         'address',
         'professional'
     ];
@@ -21,7 +22,5 @@ class Teacher extends Model
         return $this->hasMany(Group::class);
     }
 
-    public function stajes(){
-        return $this->hasMany(Staj::class);
-    }
+
 }

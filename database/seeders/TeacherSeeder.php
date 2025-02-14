@@ -22,7 +22,8 @@ class TeacherSeeder extends Seeder
             'lastname'=>"meliboyev",
             'phone'=> 999113133,
             'address'=>'Fargona sanat saroy 13-a uy',
-            'professional'=> "matematika o'qtuvchi"
+            'professional'=> "matematika o'qtuvchi",
+            'old_jobs'=>'Backend deloper at Right Solution Hub',
 
         ]);
         {
@@ -33,6 +34,7 @@ class TeacherSeeder extends Seeder
                     'username'=>fake()->firstName,
                     'lastname'=>fake()->lastName,
                     'address'=>fake()->paragraph,
+                    'old_jobs'=>fake()->paragraph,
                     'password'=>Hash::make('admin1234'),
                     'phone'=> 99894 . rand(1000000, 9999999),
                     'professional'=> fake()->paragraph,

@@ -18,9 +18,9 @@ class TeacherApiController extends Controller
         //
     }
 
-    public function show(Request $request)
+    public function show(Teacher $teacher)
     {
-        return $request;
+        return $teacher;
     }
 
     public function update(Request $request, string $id)
@@ -31,9 +31,9 @@ class TeacherApiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
+    public function destroy(Teacher $teacher)
     {
-        $request->delete;
+        $teacher->delete();
         return "deleted teacher";
     }
 }

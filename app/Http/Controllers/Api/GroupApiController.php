@@ -19,9 +19,9 @@ class GroupApiController extends Controller
         //
     }
 
-    public function show(Request $request)
+    public function show(Group $group)
     {
-        return $request;
+        return $group;
     }
 
 
@@ -30,9 +30,9 @@ class GroupApiController extends Controller
         //
     }
 
-    public function destroy(Request $request)
+    public function destroy(Group $group)
     {
-        $request->delete;
+        $group->delete();
         return "deleted group";
     }
 }

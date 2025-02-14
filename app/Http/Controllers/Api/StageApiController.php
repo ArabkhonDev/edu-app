@@ -19,9 +19,9 @@ class StageApiController extends Controller
         //
     }
 
-    public function show(Request $request)
+    public function show(Stage $stage)
     {
-        return $request;
+        return $stage;
     }
 
     public function update(Request $request, string $id)
@@ -29,9 +29,9 @@ class StageApiController extends Controller
         //
     }
 
-    public function destroy(Request $request)
+    public function destroy(Stage $stage)
     {
-        $request->delete;
+        $stage->delete();
         return "deleted stage";
     }
 }

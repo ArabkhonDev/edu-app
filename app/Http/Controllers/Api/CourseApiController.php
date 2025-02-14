@@ -20,9 +20,9 @@ class CourseApiController extends Controller
         //
     }
 
-    public function show(Request $request)
+    public function show(Course $course)
     {
-        return $request;
+        return $course;
     }
 
     public function update(Request $request, string $id)
@@ -30,9 +30,9 @@ class CourseApiController extends Controller
         //
     }
 
-    public function destroy(Request $request)
+    public function destroy(Course $course)
     {
-        $request->delete;
-        return "deleted course";
+        $course->delete();
+        return to_route('course.index');
     }
 }

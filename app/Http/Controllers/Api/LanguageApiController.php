@@ -19,9 +19,9 @@ class LanguageApiController extends Controller
         //
     }
 
-    public function show(Request $request)
+    public function show(Language $language)
     {
-        return $request;
+        return $language;
     }
 
     public function update(Request $request, string $id)
@@ -29,9 +29,9 @@ class LanguageApiController extends Controller
         //
     }
 
-    public function destroy(Request $request)
+    public function destroy(Language $language)
     {
-        $request->delete;
+        $language->delete();
         return "deleted lanugage";
     }
 }

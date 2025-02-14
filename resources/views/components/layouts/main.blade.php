@@ -31,7 +31,7 @@
             </li>
         </ul>
     </nav>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-start">
         <x-layouts.nav class="col-md-2" />
         {{ $slot }}
     </div>

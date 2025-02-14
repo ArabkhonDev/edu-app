@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('role_id')->default(2)->constrained()->cascadeOnDelete();
             $table->string('email');
             $table->string('username');
+            $table->text('old_jobs')->nullable();
             $table->string('lastname');
             $table->text('phone');
             $table->text('address');

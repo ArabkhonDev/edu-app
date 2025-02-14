@@ -17,7 +17,7 @@ class LanguageController extends Controller
 
     public function create()
     {
-        //
+        return view('language.create');
     }
 
     public function store(Request $request)
