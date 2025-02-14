@@ -11,27 +11,40 @@ class RoomApiController extends Controller
 
     public function index()
     {
-        return Room::all();
+        return Course::all();
     }
+
 
     public function store(Request $request)
     {
-        //
+        $course= Course::create([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function show(Room $room)
+    public function show(Course $course)
     {
-        return $room;
+        return $course;
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, Course $course)
     {
-        //
+        $course->update([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function destroy(Room $room)
+    public function destroy(Course $course)
     {
-        $room->delete();
-        return "deleted room";
+        $course->delete();
+        return to_route('course.index');
     }
 }

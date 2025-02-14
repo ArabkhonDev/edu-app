@@ -16,6 +16,8 @@
                     <th>Emaili</th>
                     <th>Addresi</th>
                     <th>Telefoni</th>
+                    <th>O'zgartish</th>
+                    <th>O'chirish</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +29,19 @@
                         <td>{{ $item->email }}</td>
                         <td>{{ $item->address }}</td>
                         <td>{{ $item->phone }}</td>
+                        <td>
+                            <form action="{{ route('student.edit', ['student'=> $item->id]) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-warning">edit</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('student.destroy', ['student' => $item->id]) }}" method="post"
+                                class="mx-2" onsubmit="return confirm('kursni o\'chirishga ishonchingiz komilmi?')">
+                                @method('delete')
+                                @csrf<button type="submit" class="btn btn-dark">O'chirish</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

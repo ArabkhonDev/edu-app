@@ -11,27 +11,40 @@ class StudentApiController extends Controller
 
     public function index()
     {
-        return Student::limit(10)->get();
+        return Course::all();
     }
+
 
     public function store(Request $request)
     {
-        //
+        $course= Course::create([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function show(Student $student)
+    public function show(Course $course)
     {
-        return $student;
+        return $course;
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, Course $course)
     {
-        //
+        $course->update([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function destroy(Student $student)
+    public function destroy(Course $course)
     {
-        $student->delete();
-        return "deleted student";
+        $course->delete();
+        return to_route('course.index');
     }
 }

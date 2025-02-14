@@ -6,7 +6,7 @@
     <div class="container w-25 border rounded">
         <form action="{{ route('group.store') }}" method="POST" class="py-3 " enctype="multipart/form-data">
             @csrf
-            <h3>Gruppa  o'zgartirish</h3>
+            <h3>Gruppa  yarating</h3>
             <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="title"
                     value="{{ old('name') }}">

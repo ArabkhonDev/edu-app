@@ -16,7 +16,8 @@
                     <th>Addresi</th>
                     <th>Sohasi</th>
                     <th>Telefoni</th>
-                    {{-- <th>Tajribasi</th> --}}
+                    <th>O'zgartish</th>
+                    <th>O'chirish</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,12 +29,19 @@
                         <td>{{ $item->address }}</td>
                         <td>{{ $item->professional }}</td>
                         <td>{{ $item->phone }}</td>
-                        {{-- <tr>
-                    <td>{{$item->staj->firma_name}}</td>
-                    <td>{{$item->staj->title}}</td>
-                    <td>{{$item->staj->duration}}</td>
-                    <td>{{$item->staj->desc}}</td>
-                </tr> --}}
+                        <td>
+                            <form action="{{ route('teacher.edit', ['teacher'=>$item->id]) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-warning">edit</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('teacher.destroy', ['teacher' => $item->id]) }}" method="post"
+                                class="mx-2" onsubmit="return confirm('kursni o\'chirishga ishonchingiz komilmi?')">
+                                @method('delete')
+                                @csrf<button type="submit" class="btn btn-dark">O'chirish</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

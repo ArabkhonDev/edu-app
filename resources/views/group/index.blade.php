@@ -17,6 +17,8 @@
                 <th>Bosqich</th>
                 <th>Boshlanish vaqti</th>
                 <th>Tugash vaqti</th>
+                <td>O'zgartirish</td>
+                <td>O'chirish</td>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +32,19 @@
                 <td>{{$item->stage->title}}</td>
                 <td>{{$item->start_time}}</td>
                 <td>{{$item->end_time}}</td>
+                <td>
+                    <form action="{{ route('group.edit', ['group'=> $item->id]) }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-warning">edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ route('group.destroy', ['group' => $item->id]) }}" method="post"
+                        class="mx-2" onsubmit="return confirm('kursni o\'chirishga ishonchingiz komilmi?')">
+                        @method('delete')
+                        @csrf<button type="submit" class="btn btn-dark">O'chirish</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

@@ -11,26 +11,43 @@ class LanguageApiController extends Controller
 
     public function index()
     {
-        return Language::all();
+        return Course::all();
     }
+
 
     public function store(Request $request)
     {
-        //
+        $course= Course::create([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function show(Language $language)
+    public function show(Course $course)
     {
-        return $language;
+        return $course;
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, Course $course)
     {
-        //
+        $course->update([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function destroy(Language $language)
+    public function destroy(Course $course)
     {
+        $course->delete();
+        return to_route('course.index');
+    }
+}   {
         $language->delete();
         return "deleted lanugage";
     }

@@ -32,15 +32,18 @@
                 <td>{{$item->price}} / 2 * 1.2</td>
                 <td>{{$item->price}} / {{$item->duration}} * 1.2</td>
                 <td>{{$item->knowladge}}</td>
+                <td>
+                    <form action="{{ route('course.edit', ['course'=>$item->id]) }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-warning">edit</button>
+                    </form>
+                </td>
                 <td><form action="{{ route('courses.destroy', ['course' => $item->id]) }}" method="post"
                     class="mx-2" onsubmit="return confirm('kursni o\'chirishga ishonchingiz komilmi?')">
                     @method('delete')
                     @csrf<button type="submit" class="btn btn-dark">O'chirish</button>
                 </form></td>
-                <td>
-                    <a href="#" class="btn btn-warning">Edit</a>
-                    {{-- <a href="{{route('course.edit')}}" class="btn btn-warning">Edit</a> --}}
-                </td>
+               
             </tr>
             @endforeach
         </tbody>

@@ -28,9 +28,9 @@ class RoomController extends Controller
         //
     }
 
-    public function show(string $id)
+    public function show(Room $room)
     {
-        //
+        
     }
 
     public function edit(string $id)

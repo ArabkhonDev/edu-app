@@ -22,7 +22,7 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->title }}</td>
                         <td>
-                            <form action="{{ route('room.store') }}" method="post">
+                            <form action="{{ route('language.edit', ['language'=>$item->id]) }}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-warning">edit</button>
                             </form>

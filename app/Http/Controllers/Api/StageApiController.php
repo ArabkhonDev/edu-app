@@ -11,27 +11,40 @@ class StageApiController extends Controller
 
     public function index()
     {
-        return Stage::all();
+        return Course::all();
     }
+
 
     public function store(Request $request)
     {
-        //
+        $course= Course::create([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function show(Stage $stage)
+    public function show(Course $course)
     {
-        return $stage;
+        return $course;
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, Course $course)
     {
-        //
+        $course->update([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    public function destroy(Stage $stage)
+    public function destroy(Course $course)
     {
-        $stage->delete();
-        return "deleted stage";
+        $course->delete();
+        return to_route('course.index');
     }
 }

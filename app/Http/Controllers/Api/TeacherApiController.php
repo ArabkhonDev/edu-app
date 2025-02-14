@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class TeacherApiController extends Controller
 {
+
     public function index()
     {
         return Teacher::all();
@@ -15,7 +16,13 @@ class TeacherApiController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $course= Teacher::create([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
     public function show(Teacher $teacher)
@@ -23,17 +30,20 @@ class TeacherApiController extends Controller
         return $teacher;
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, Teacher $teacher)
     {
-        //
+        $teacher->update([
+            'name'=>$request->name,
+            'duration'=>$request->duration,
+            'price'=>$request->price,
+            'knowladge'=>$request->knowladge
+        ]);
+        return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Teacher $teacher)
     {
         $teacher->delete();
-        return "deleted teacher";
+        return to_route('course.index');
     }
 }

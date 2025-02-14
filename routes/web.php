@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ChallangeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StudentController;
@@ -36,7 +38,9 @@ Route::resources([
     "group"=> GroupController::class,
     "course"=> CourseController::class,
     "room"=> RoomController::class,
-    "language"=>LanguageController::class
+    "language"=>LanguageController::class,
+    "news"=>NewsController::class,
+    "challange"=>ChallangeController::class,
 ]);
 
 

@@ -42,22 +42,22 @@
         <ul class="nav flex-column mb-2">
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    Current month
+                    Oxirgi oy o'quvchilari
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    Last quarter
+                    Yangiliklar
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    Social engagement
+                    Musoboqalar
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    Year-end sale
+                    Filiallar
                 </a>
             </li>
         </ul>
