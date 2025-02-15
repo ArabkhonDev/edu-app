@@ -14,9 +14,6 @@ class Course extends Model
         'knowladge'
     ];
 
-    public function laguage(){
-        return $this->belongsTo(Language::class);
-    }
 
     public function groups(){
         return $this->hasMany(Group::class);
