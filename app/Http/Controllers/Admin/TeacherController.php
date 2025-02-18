@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Group;
 use App\Models\Teacher;
@@ -11,14 +13,14 @@ class TeacherController extends Controller
 
     public function index()
     {
-        return view('teacher.index')->with([
+        return view('admin.teacher.index')->with([
             'teachers' => Teacher::all(),
         ]);
     }
 
     public function create()
     {
-        return view('teacher.create')->with([
+        return view('admin.teacher.create')->with([
             'groups' => Group::all(),
         ]);
     }
@@ -40,14 +42,14 @@ class TeacherController extends Controller
 
     public function show(Teacher $teacher)
     {
-        return view('teacher.show')->with([
+        return view('admin.teacher.show')->with([
             'teacher' => $teacher,
         ]);
     }
 
     public function edit(Teacher $teacher)
     {
-        return view('teacher.edit')->with([
+        return view('admin.teacher.edit')->with([
             'teacher' => $teacher
         ]);
     }
@@ -65,6 +67,7 @@ class TeacherController extends Controller
             'address' => $request->address,
             'professional' => $request->professional
         ]);
+        return redirect()->route('teacher.show');
     }
 
     public function destroy(Teacher $teacher)

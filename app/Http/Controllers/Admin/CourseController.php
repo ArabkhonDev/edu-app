@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Course;
 use App\Models\Language;
@@ -10,55 +12,50 @@ class CourseController extends Controller
 {
     public function index()
     {
-        return view('course.index')->with([
+        return view('admin.course.index')->with([
             'courses'=> Course::all(),
         ]);
     }
 
     public function create()
     {
-        $languages = Language::all();
-        return view('course.create')->with([
-            'languages'=>$languages
-        ]);
+        return view('admin.course.create');
     }
 
     public function store(Request $request)
     {
         $course = Course::create([
             'name' => $request->name,
-            'language_id'=> $request->lanuguage_id,
             'duration'=>$request->duration,
             'price' => $request->price,
             'knowladge' => $request->knowladge,
         ]);
 
-        return to_route('course.index');
+        return to_route('admin.course.index');
     }
 
     public function show(Course $course)
     {
-        return view('course.show')->with([
+        return view('admin.course.show')->with([
             'course'=> $course
         ]);
     }
 
     public function edit(Course $course)
     {
-        return view('courses.edit')->with(['course' => $course]);
+        return view('admin.courses.edit')->with(['course' => $course]);
     }
 
     public function update(Request $request, Course $course)
     {
         $course->update([
             'name' => $request->name,
-            'language_id'=> $request->lanuguage_id,
             'duration'=>$request->duration,
             'price' => $request->price,
             'knowladge' => $request->knowladge,
         ]);
 
-        return redirect()->route('courses.show', ['post' => $course->id]);
+        return redirect()->route('admin.courses.show', ['post' => $course->id]);
 
     }
 

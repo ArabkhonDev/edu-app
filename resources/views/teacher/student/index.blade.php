@@ -1,34 +1,42 @@
 <x-layouts.main>
     <x-slot:title>
-        Honalar
+        Student
     </x-slot>
 
     <div class="table-responsive">
         <div class="p-2">
-            <a href="{{ route('language.create') }}" class="btn btn-primary">Til qo'shish</a>
+            <a href="{{ route('student.create') }}" class="btn btn-primary">Student qo'shish</a>
         </div>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>O'zgartirish</th>
+                    <th>Ismi</th>
+                    <th>Familyasi</th>
+                    <th>Emaili</th>
+                    <th>Addresi</th>
+                    <th>Telefoni</th>
+                    <th>O'zgartish</th>
                     <th>O'chirish</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($languages as $item)
+                @foreach ($students as $item)
                     <tr>
-                        <td>{{ $item->id }}</td>
-                        <td>{{ $item->title }}</td>
+                        <td><a href="{{ route('student.show', ['student' => $item->id]) }}">{{ $item->id }}</a></td>
+                        <td>{{ $item->username }}</td>
+                        <td>{{ $item->lastname }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->address }}</td>
+                        <td>{{ $item->phone }}</td>
                         <td>
-                            <form action="{{ route('language.edit', ['language'=>$item->id]) }}" method="post">
+                            <form action="{{ route('student.edit', ['student'=> $item->id]) }}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-warning">edit</button>
                             </form>
                         </td>
                         <td>
-                            <form action="{{ route('language.destroy', ['language' => $item->id]) }}" method="post"
+                            <form action="{{ route('student.destroy', ['student' => $item->id]) }}" method="post"
                                 class="mx-2" onsubmit="return confirm('kursni o\'chirishga ishonchingiz komilmi?')">
                                 @method('delete')
                                 @csrf<button type="submit" class="btn btn-dark">O'chirish</button>
@@ -38,6 +46,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{-- {{$students->links()}} --}}
     </div>
 
 </x-layouts.main>

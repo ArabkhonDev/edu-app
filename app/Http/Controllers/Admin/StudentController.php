@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Group;
 use App\Models\Student;
@@ -11,14 +13,14 @@ class StudentController extends Controller
 
     public function index()
     {
-        return view('student.index')->with([
+        return view('admin.student.index')->with([
             'students'=> Student::paginate(10),
         ]);
     }
 
     public function create()
     {
-        return view('student.create')->with([
+        return view('admin.student.create')->with([
             'groups'=> Group::all(),
         ]);
     }
@@ -38,14 +40,14 @@ class StudentController extends Controller
 
     public function show(Student $student)
     {
-        return view('student.show')->with([
+        return view('admin.student.show')->with([
             'student'=>$student
         ]);
     }
 
     public function edit(Student $student)
     {
-        return view('student.edit')->with([
+        return view('admin.student.edit')->with([
             'student' => $student
         ]);
     }
@@ -61,6 +63,7 @@ class StudentController extends Controller
             'phone' => $request->phone,
             'address' => $request->address,
         ]);
+        return redirect()->route('student.show');
     }
 
     public function destroy(Student $student)

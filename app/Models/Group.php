@@ -9,14 +9,14 @@ class Group extends Model
     protected $fillable = [
         'course_id',
         'teacher_id',
-        'stage_id',
+        'room_id',
         'start_time',
         'end_time',
         'name'
     ];
 
     public function students(){
-        return $this->hasMany(Student::class);
+        return $this->belongsToMany(Student::class);
     }
 
     public function course(){
@@ -26,13 +26,9 @@ class Group extends Model
     public function teacher(){
         return $this->belongsTo(Teacher::class);
     }
-
-    
-    public function stage(){
-        return $this->belongsTo(Stage::class);
-    }
     
     public function room(){
         return $this->belongsTo(Room::class);
     }
+
 }

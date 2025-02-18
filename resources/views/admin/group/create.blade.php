@@ -48,6 +48,17 @@
                 @enderror
             </div>
             <div class="form-group">
+                <h3>O'qtuvchini tanlang</h3>
+               <select name="students[]" id="" >
+                @foreach ($students as $student)
+                <option value="{{$student->id}}">{{$student->username}}</option>
+                @endforeach
+               </select>
+                @error('students[]')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <input type="time" class="form-control " name="start_time" placeholder="boshlanish vaqti"
                     value="{{ old('start_time') }}">
                 @error('start_time')

@@ -11,9 +11,7 @@
                 {{-- <th>Language</th> --}}
                 <th>name</th>
                 <th>duration(month)</th>
-                <th>1marta tolov</th>
-                <th>2-mart tolov</th>
-                <th>Oyma -oy</th>
+                <th>Oylik tolov</th>
                 <th>Bilimalar</th>
                 <th>O'zgartirish"</th>
                 <th>O'chirish</th>
@@ -28,9 +26,7 @@
                 <td><a href="{{route('course.show', ['course'=> $item->id])}}">{{$item->id}}</a></td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->duration}}</td>
-                <td>{{$item->price}}$</td>
-                <td>{{$item->price}} / 2 * 1.2</td>
-                <td>{{$item->price}} / {{$item->duration}} * 1.2</td>
+                <td>{{$item->price}} ming so'm</td>
                 <td>{{$item->knowladge}}</td>
                 <td>
                     <form action="{{ route('course.edit', ['course'=>$item->id]) }}" method="post">

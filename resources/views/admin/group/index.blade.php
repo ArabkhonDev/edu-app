@@ -14,7 +14,6 @@
                 <th>Name</th>
                 <th>Teacher</th>
                 <th>Xonalar</th>
-                <th>Bosqich</th>
                 <th>Boshlanish vaqti</th>
                 <th>Tugash vaqti</th>
                 <td>O'zgartirish</td>
@@ -29,7 +28,6 @@
                 <td>{{$item->name}}</td>
                 <td>{{$item->teacher->username}}</td>
                 <td>{{$item->room_id}}</td>
-                <td>{{$item->stage->title}}</td>
                 <td>{{$item->start_time}}</td>
                 <td>{{$item->end_time}}</td>
                 <td>

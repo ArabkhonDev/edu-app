@@ -3,8 +3,8 @@
 use App\Http\Controllers\Api\BranchApiController;
 use App\Http\Controllers\Api\CourseApiController;
 use App\Http\Controllers\Api\GroupApiController;
+use App\Http\Controllers\Api\PaymentApiController;
 use App\Http\Controllers\Api\RoomApiController;
-use App\Http\Controllers\Api\StageApiController;
 use App\Http\Controllers\Api\StudentApiController;
 use App\Http\Controllers\Api\TeacherApiController;
 use App\Http\Controllers\ChallangeApiController;
@@ -22,9 +22,9 @@ Route::apiResources([
     'students'=>StudentApiController::class,
     'teachers'=>TeacherApiController::class,
     'groups'=> GroupApiController::class,
-    'stages'=>StageApiController::class,
     'rooms'=>RoomApiController::class,
     'news'=>NewsApiController::class,
+    'payments'=>PaymentApiController::class,
     'branches'=>BranchApiController::class,
     'challanges'=>ChallangeApiController::class,
 ]);

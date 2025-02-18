@@ -13,7 +13,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained()->cascadeOnDelete();
             $table->foreignId('teacher_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('stage_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('room_id')->nullable()->constrained()->cascadeOnDelete();
             $table->time('start_time');
             $table->time('end_time');

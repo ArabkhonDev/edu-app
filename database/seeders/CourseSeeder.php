@@ -13,9 +13,8 @@ class CourseSeeder extends Seeder
     {
         for($i = 0; $i<5; $i++){
             Course::create([
-                'language_id'=> rand(1, 5),
                 'name'=>fake()->name,
-                'duration'=>rand(4, 12) . "month",
+                'duration'=>rand(9, 12) . " month",
                 'price'=> rand(150, 5000),
                 'knowladge'=>fake()->word(8, true),
             ]);

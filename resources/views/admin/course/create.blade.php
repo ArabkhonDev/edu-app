@@ -15,19 +15,6 @@
                 @enderror
             </div>
             <div class="form-group">
-                <h3>Tilni tanlang</h3>
-               <select name="language_id" id="" multiple>
-                <option value="1">Uzbek</option>
-                <option value="2">English</option>
-                <option value="3">Rus tili</option>
-                <option value="4">German tili</option>
-                <option value="5">Koreya</option>
-               </select>
-                @error('language_id')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="form-group">
                 <input type="text" class="form-control " name="duration" placeholder="duration"
                     value="{{ old('duration') }}">
                 @error('duration')
