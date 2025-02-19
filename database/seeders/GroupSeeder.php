@@ -14,7 +14,7 @@ class GroupSeeder extends Seeder
     {
         for($i = 0; $i<20; $i++){
             Group::create([
-                'teacher_id'=>rand(1, 13),
+                'user_id'=>rand(1, 13),
                 'course_id'=>rand(1, 5),
                 "room_id" =>rand(1, 10),
                 'start_time'=>Carbon::parse('12:30:00'),

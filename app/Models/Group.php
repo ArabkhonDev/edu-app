@@ -15,18 +15,14 @@ class Group extends Model
         'name'
     ];
 
-    public function students(){
-        return $this->belongsToMany(Student::class);
+    public function users(){
+        return $this->belongsToMany(User::class);
     }
 
     public function course(){
         return $this->belongsTo(Course::class);
     }
 
-    public function teacher(){
-        return $this->belongsTo(Teacher::class);
-    }
-    
     public function room(){
         return $this->belongsTo(Room::class);
     }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\Group;
-use App\Models\Student;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -14,7 +14,7 @@ class StudentController extends Controller
     public function index()
     {
         return view('admin.student.index')->with([
-            'students'=> Student::paginate(10),
+            'students'=> User::paginate(10),
         ]);
     }
 
@@ -27,7 +27,7 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        $student = Student::create([
+        $student = User::create([
             'role_id' => 2,
             'email' => $request->email,
             'password' => $request->password,
@@ -38,7 +38,7 @@ class StudentController extends Controller
         ]);
     }
 
-    public function show(Student $student)
+    public function show(User $student)
     {
         return view('admin.student.show')->with([
             'student'=>$student

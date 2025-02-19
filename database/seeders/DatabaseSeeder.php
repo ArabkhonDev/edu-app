@@ -10,8 +10,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             PaymentSeeder::class,
-            StudentSeeder::class,
-            TeacherSeeder::class,
+            UserSeeder::class,
             CourseSeeder::class,
             RoomSeeder::class,
             GroupSeeder::class,
